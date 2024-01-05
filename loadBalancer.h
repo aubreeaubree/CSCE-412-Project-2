@@ -1,7 +1,7 @@
 #pragma once
 #include <string>
-#include "webserver.cpp"
-#include "requestqueue.cpp"
+#include "webserver.h"
+#include "requestqueue.h"
 using namespace std;
 
 class loadBalancer{

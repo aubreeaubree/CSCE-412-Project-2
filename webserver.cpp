@@ -9,7 +9,7 @@ void webserver::setRequest(request req){
 }
 
 int webserver::newTimeLeft(){
-    timeLeftInReq--;
+    return timeLeftInReq--;
 }
 
 bool webserver::reqComplete(){
