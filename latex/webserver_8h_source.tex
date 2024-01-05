@@ -1,0 +1,30 @@
+\doxysection{webserver.\+h}
+\hypertarget{webserver_8h_source}{}\label{webserver_8h_source}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#pragma\ once}}
+\DoxyCodeLine{00002\ \textcolor{preprocessor}{\#include\ <string>}}
+\DoxyCodeLine{00003\ \textcolor{preprocessor}{\#include\ <vector>}}
+\DoxyCodeLine{00004\ \textcolor{preprocessor}{\#include\ "{}request.h"{}}}
+\DoxyCodeLine{00005\ \textcolor{keyword}{using\ namespace\ }std;}
+\DoxyCodeLine{00006\ }
+\DoxyCodeLine{00007\ \textcolor{keyword}{class\ }\mbox{\hyperlink{classwebserver}{webserver}}\{}
+\DoxyCodeLine{00008\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00009\ \ \ \ \ \textcolor{comment}{//\ Function\ to\ set\ a\ new\ request\ for\ the\ web\ server}}
+\DoxyCodeLine{00010\ \ \ \ \ \textcolor{keywordtype}{void}\ setRequest(\mbox{\hyperlink{structrequest}{request}}\ req);}
+\DoxyCodeLine{00011\ \ \ \ \ \textcolor{comment}{//\ Function\ to\ update\ the\ time\ left\ for\ the\ current\ request}}
+\DoxyCodeLine{00012\ \ \ \ \ \textcolor{keywordtype}{int}\ newTimeLeft();}
+\DoxyCodeLine{00013\ \ \ \ \ \textcolor{comment}{//\ Function\ to\ check\ if\ the\ current\ request\ is\ complete}}
+\DoxyCodeLine{00014\ \ \ \ \ \textcolor{keywordtype}{bool}\ reqComplete();}
+\DoxyCodeLine{00015\ \ \ \ \ \textcolor{comment}{//\ Function\ to\ check\ if\ the\ web\ server\ has\ an\ assigned\ request}}
+\DoxyCodeLine{00016\ \ \ \ \ \textcolor{keywordtype}{bool}\ hasRequest();}
+\DoxyCodeLine{00017\ \ \ \ \ \textcolor{comment}{//\ Function\ to\ print\ the\ time\ left\ for\ the\ current\ request}}
+\DoxyCodeLine{00018\ \ \ \ \ \textcolor{keywordtype}{int}\ printTime();}
+\DoxyCodeLine{00019\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00020\ \ \ \ \ \textcolor{comment}{//\ Variable\ to\ store\ the\ time\ left\ for\ the\ current\ request}}
+\DoxyCodeLine{00021\ \ \ \ \ \textcolor{keywordtype}{int}\ timeLeftInReq\ =\ 0;}
+\DoxyCodeLine{00022\ \ \ \ \ \mbox{\hyperlink{structrequest}{request}}\ currReq;}
+\DoxyCodeLine{00023\ \ \ \ \ \textcolor{comment}{//\ Flag\ indicating\ whether\ the\ web\ server\ has\ an\ assigned\ request}}
+\DoxyCodeLine{00024\ \ \ \ \ \textcolor{keywordtype}{bool}\ boxIsFull\ =\ \textcolor{keyword}{false};}
+\DoxyCodeLine{00025\ \};}
+
+\end{DoxyCode}

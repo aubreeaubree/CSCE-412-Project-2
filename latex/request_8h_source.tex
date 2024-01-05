@@ -1,0 +1,15 @@
+\doxysection{request.\+h}
+\hypertarget{request_8h_source}{}\label{request_8h_source}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#pragma\ once}}
+\DoxyCodeLine{00002\ \textcolor{preprocessor}{\#include\ <string>}}
+\DoxyCodeLine{00003\ \textcolor{keyword}{using\ namespace\ }std;}
+\DoxyCodeLine{00004\ }
+\DoxyCodeLine{00005\ \textcolor{keyword}{struct\ }\mbox{\hyperlink{structrequest}{request}}\ \{}
+\DoxyCodeLine{00006\ \ \ \ \ \textcolor{comment}{//\ Default\ constructor\ initializes\ source\ IP,\ destination\ IP,\ and\ time\ for\ task}}
+\DoxyCodeLine{00007\ \ \ \ \ \textcolor{keywordtype}{string}\ sourceIP\ =\ to\_string(rand()\ \%\ 256)\ +\ \textcolor{stringliteral}{"{}."{}}\ +\ to\_string(rand()\ \%\ 256)\ +\ \textcolor{stringliteral}{"{}."{}}\ +\ to\_string(rand()\ \%\ 256);}
+\DoxyCodeLine{00008\ \ \ \ \ \textcolor{keywordtype}{string}\ destinationIP\ =\ to\_string(rand()\ \%\ 256)\ +\ \textcolor{stringliteral}{"{}."{}}\ +\ to\_string(rand()\ \%\ 256)\ +\ \textcolor{stringliteral}{"{}."{}}\ +\ to\_string(rand()\ \%\ 256)\ +\ \textcolor{stringliteral}{"{}."{}}\ +\ to\_string(rand()\ \%\ 256);}
+\DoxyCodeLine{00009\ \ \ \ \ \textcolor{keywordtype}{int}\ timeForTask\ =\ 4\ +\ (rand()\ \%\ 97);}
+\DoxyCodeLine{00010\ \};}
+
+\end{DoxyCode}

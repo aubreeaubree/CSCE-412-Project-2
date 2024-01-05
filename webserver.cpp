@@ -8,6 +8,7 @@ void webserver::setRequest(request req){
     boxIsFull = true;
 }
 
+// Decrement the time left for the current request and return the updated value
 int webserver::newTimeLeft(){
     return timeLeftInReq--;
 }
@@ -24,4 +25,7 @@ bool webserver::hasRequest(){
         return true;        
     }
     return false;
+}
+int webserver::printTime(){
+    return timeLeftInReq;
 }

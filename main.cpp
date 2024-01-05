@@ -5,29 +5,31 @@ using namespace std;
 
 //populate request queue 
 int main(){
-    int maxClock = 200; //user input later
-    int numServers = 10; // user input later
+    int maxClock = 10000;
+    cout << "How many clock ticks do you want to wait for: " << maxClock;
+    //cin >> maxClock;
+    int numServers = 100; 
+    cout << "How many servers to start: " << numServers;
+    //cin >> numServers;
+
+    // Create an instance of loadBalancer
     loadBalancer load;
-    // generate full queue
+    // Generate a full request queue
     for (long unsigned int i = 0; i < numServers * 20; i++){
         request reqMade;
         load.addReq(reqMade);
     }
 
     for (size_t i = 0; i < maxClock; i++){
+        // Generate random requests periodically
         if (rand() % 3 == 0){
             request reqMade;
             load.addReq(reqMade);
         }
         load.runWorkload();
-        
+        if ((i % 100) == 0){
+            load.printStatus();
+        }
     }
-    
-    // add random requests -> if requests in queue is greater or equal to max requests -> +1 server(maxreq=servers*20)
-    // vector.resize(numservers + 1)
-    // max req += 20
-    // else if num servers*15 > num of requests -> decrease by 1
-    // while rand# %5 == 0 or another -> chat? randomly add requests
-    // request = q.pop() -> adding queue element to web servers
 
 }
