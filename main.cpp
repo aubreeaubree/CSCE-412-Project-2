@@ -8,7 +8,7 @@ int main(){
     int maxClock = 10000;
     cout << "How many clock ticks do you want to wait for: " << maxClock;
     //cin >> maxClock;
-    int numServers = 100; 
+    int numServers = 10; 
     cout << "How many servers to start: " << numServers;
     //cin >> numServers;
 
