@@ -1,14 +1,25 @@
 #include <iostream>
 #include "loadBalancer.h"
+
 using namespace std;
 
+void loadBalancer::runWorkload(){
+    for (size_t w = 0; w < workload.size(); w++){
+        if (!workload.at(w).hasRequest() && !q.isEmpty()){
+            workload.at(w).setRequest(q.front());
+            q.popReq();
+        }
+        else if (workload.at(w).hasRequest()){
+            workload.at(w).newTimeLeft();
+            if (workload.at(w).reqComplete() && !q.isEmpty()){
+                workload.at(w).setRequest(q.front());
+                q.popReq();
+            }
+        }   
+    }
+    userTime++;
+}
 
-
-
-
-// add random requests -> if requests in queue is greater or equal to max requests -> +1 server(maxreq=servers*20) 
-// vector.resize(numservers + 1)
-// max req += 20
-// else if num servers*15 > num of requests -> decrease by 1
-// while rand# %5 == 0 or another -> chat? randomly add requests
-// request = q.pop() -> adding queue element to web servers
+void loadBalancer::addReq(request reqAdded){
+    q.pushReq(reqAdded);
+}
