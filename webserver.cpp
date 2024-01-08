@@ -1,3 +1,7 @@
+/** @file webserver.cpp
+ *  @brief Implements webserver class.
+ */
+
 #include <iostream>
 #include "webserver.h"
 using namespace std;
@@ -6,6 +10,10 @@ void webserver::setRequest(request req){
     currReq = req;
     timeLeftInReq = req.timeForTask;
     boxIsFull = true;
+}
+
+request webserver::getRequest(){
+    return currReq;
 }
 
 // Decrement the time left for the current request and return the updated value

@@ -1,7 +1,28 @@
+/** @file loadBalancer.cpp
+ *  @brief Implements loadBalancer class.
+*/
+
 #include <iostream>
 #include "loadBalancer.h"
 
 using namespace std;
+
+loadBalancer::loadBalancer(){
+    userTime = 0;
+    for (size_t i = 0; i < 10; i++){
+        webserver server;
+        workload.push_back(server);
+    }
+    
+}
+
+loadBalancer::loadBalancer(size_t serverCount){
+    userTime = 0;
+    for (size_t i = 0; i < serverCount; i++){
+        webserver server;
+        workload.push_back(server);
+    }
+}
 
 void loadBalancer::runWorkload(){
     // Check for workload adjustments every 100 seconds
@@ -10,10 +31,12 @@ void loadBalancer::runWorkload(){
         if (q.sizeQ() > 25 * workload.size()){
             webserver wsNew;
             workload.push_back(wsNew);
+            cout << "\nServer has been added" << endl;
         }
         // Remove a web server if the queue size is small
         else if (q.sizeQ() < 15 * workload.size()){
             workload.pop_back();
+            cout << "\nServer has been removed" << endl;
         }
     }
     // Iterate through each web server in the workload
@@ -42,23 +65,26 @@ void loadBalancer::addReq(request reqAdded){
 }
 
 void loadBalancer::printStatus() {
-    cout << "======================================" << endl;
+    cout << "\n======================================" << endl;
     cout << "======== Load Balancer Status ========" << endl;
     cout << "======================================" << endl;
-    // Iterate through each web server in the workload
-    for (size_t w = 0; w < workload.size(); w++) {
+    cout << "Current queue size: " << q.sizeQ() << endl;
+    cout << "Number of servers: " << workload.size() << endl << endl;
+        // Iterate through each web server in the workload
+        for (size_t w = 0; w < workload.size(); w++){
         // Check if the web server has an assigned request
+        cout << "Server #" << w + 1 << " Status" << endl;
         if (workload.at(w).hasRequest()) {
             // Print details of the web server's status when a request is assigned
             cout << "Time left in request: " << workload.at(w).printTime() << " seconds\n";
-            cout << "Source IP: " << q.front().sourceIP << endl;
-            cout << "Destination IP: " << q.front().destinationIP << endl;
+            cout << "Source IP: " << workload.at(w).getRequest().sourceIP << endl;
+            cout << "Destination IP: " << workload.at(w).getRequest().destinationIP << endl;
         } 
         else {
             // Print status when no request is assigned to the web server
             cout << "  No request assigned.\n";
         }
-        cout << "-------------------------\n";
+        cout << "---------------------------------\n";
     }
 }
 

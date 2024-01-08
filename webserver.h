@@ -1,3 +1,7 @@
+/** @file webserver.h
+ *  @brief Defines webserver class.
+ */
+
 #pragma once
 #include <string>
 #include <vector>
@@ -6,20 +10,22 @@ using namespace std;
 
 class webserver{
 public:
-    // Function to set a new request for the web server
+    /// Function to set a new request for the web server
     void setRequest(request req);
-    // Function to update the time left for the current request
+    /// Function to update the time left for the current request
     int newTimeLeft();
-    // Function to check if the current request is complete
+    /// Function to check if the current request is complete
     bool reqComplete();
-    // Function to check if the web server has an assigned request
+    /// Function to check if the web server has an assigned request
     bool hasRequest();
-    // Function to print the time left for the current request
+    /// Function to print the time left for the current request
     int printTime();
+    /// Function to retrieve request
+    request getRequest();
 private:
-    // Variable to store the time left for the current request
+    /// Variable to store the time left for the current request
     int timeLeftInReq = 0;
     request currReq;
-    // Flag indicating whether the web server has an assigned request
+    /// Flag indicating whether the web server has an assigned request
     bool boxIsFull = false;
 };

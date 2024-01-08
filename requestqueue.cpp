@@ -1,3 +1,6 @@
+/** @file requestqueue.cpp
+ *  @brief Implements requestqueue class.
+ */
 #include <iostream>
 #include "requestqueue.h"
 #include "request.h"
