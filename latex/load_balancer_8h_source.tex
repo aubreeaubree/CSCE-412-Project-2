@@ -1,0 +1,25 @@
+\doxysection{load\+Balancer.\+h}
+\hypertarget{load_balancer_8h_source}{}\label{load_balancer_8h_source}\mbox{\hyperlink{load_balancer_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ }
+\DoxyCodeLine{00005\ \textcolor{preprocessor}{\#pragma\ once}}
+\DoxyCodeLine{00006\ \textcolor{preprocessor}{\#include\ <string>}}
+\DoxyCodeLine{00007\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{webserver_8h}{webserver.h}}"{}}}
+\DoxyCodeLine{00008\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{requestqueue_8h}{requestqueue.h}}"{}}}
+\DoxyCodeLine{00009\ \textcolor{keyword}{using\ namespace\ }std;}
+\DoxyCodeLine{00010\ }
+\DoxyCodeLine{00014\ \textcolor{keyword}{class\ }\mbox{\hyperlink{classload_balancer}{loadBalancer}}\{}
+\DoxyCodeLine{00015\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00016\ \ \ \ \ \mbox{\hyperlink{classload_balancer}{loadBalancer}}();}
+\DoxyCodeLine{00017\ \ \ \ \ \mbox{\hyperlink{classload_balancer}{loadBalancer}}(\textcolor{keywordtype}{size\_t}\ serverCount);}
+\DoxyCodeLine{00019\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classload_balancer_a69fe48bee9afc5095e65cddec478abd7}{runWorkload}}();}
+\DoxyCodeLine{00021\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classload_balancer_af0dec9ada510d7a66fdde7cda5b51d12}{addReq}}(\mbox{\hyperlink{structrequest}{request}}\ reqAdded);}
+\DoxyCodeLine{00023\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classload_balancer_a8403e34b57a1605efe45b8d0a4178c92}{printStatus}}();}
+\DoxyCodeLine{00024\ }
+\DoxyCodeLine{00025\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00026\ \ \ \ \ vector<webserver>\ workload;}
+\DoxyCodeLine{00027\ \ \ \ \ \mbox{\hyperlink{classrequestqueue}{requestqueue}}\ q;}
+\DoxyCodeLine{00028\ \ \ \ \ \textcolor{keywordtype}{int}\ userTime;}
+\DoxyCodeLine{00029\ \};}
+
+\end{DoxyCode}

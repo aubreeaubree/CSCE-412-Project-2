@@ -1,4 +1,4 @@
-/** @file reuestqueue.h
+/** @file requestqueue.h
  *  @brief Defines reuestqueue class.
  */
 #pragma once

@@ -1,0 +1,20 @@
+\doxysection{requestqueue.\+h}
+\hypertarget{requestqueue_8h_source}{}\label{requestqueue_8h_source}\mbox{\hyperlink{requestqueue_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ }
+\DoxyCodeLine{00004\ \textcolor{preprocessor}{\#pragma\ once}}
+\DoxyCodeLine{00005\ \textcolor{preprocessor}{\#include\ <queue>}}
+\DoxyCodeLine{00006\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{request_8h}{request.h}}"{}}}
+\DoxyCodeLine{00007\ }
+\DoxyCodeLine{00008\ \textcolor{keyword}{class\ }\mbox{\hyperlink{classrequestqueue}{requestqueue}}\{}
+\DoxyCodeLine{00009\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00011\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classrequestqueue_a0e1b1b720585c506bbcb60886acd9173}{popReq}}();}
+\DoxyCodeLine{00013\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classrequestqueue_a725bc03222c6017b32af67fdcce671e7}{pushReq}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{structrequest}{request}}\&\ newRequest);}
+\DoxyCodeLine{00014\ \ \ \ \ \textcolor{keywordtype}{bool}\ isEmpty();}
+\DoxyCodeLine{00015\ \ \ \ \ \textcolor{keyword}{const}\ \mbox{\hyperlink{structrequest}{request}}\&\ front();}
+\DoxyCodeLine{00016\ \ \ \ \ \textcolor{keywordtype}{size\_t}\ sizeQ();}
+\DoxyCodeLine{00017\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00018\ \ \ \ \ queue<request>\ q;}
+\DoxyCodeLine{00019\ \};}
+
+\end{DoxyCode}

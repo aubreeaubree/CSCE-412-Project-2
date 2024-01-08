@@ -1,4 +1,4 @@
-/** @file reuest.h
+/** @file request.h
  *  @brief Defines reuest class.
  */
 #pragma once
